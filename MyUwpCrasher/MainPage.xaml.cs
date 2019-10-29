@@ -26,5 +26,10 @@ namespace MyUwpCrasher
         {
             this.InitializeComponent();
         }
+
+        private void CrashButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Crash!");
+        }
     }
 }
