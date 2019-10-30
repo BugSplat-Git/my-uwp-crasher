@@ -31,7 +31,7 @@ namespace MyUwpCrasher
 
         private void UnhandledExceptionButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new Exception("BugSplat!");
+            ThrowExceptionWithStackFrames();
         }
 
         private void HandledExceptionButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,12 @@ namespace MyUwpCrasher
 
         private async void AsyncExceptionButton_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Run(() => throw new Exception("Async BugSplat!"));
+            await Task.Run(() => throw new Exception("BugSplat!"));
+        }
+
+        private void ThrowExceptionWithStackFrames()
+        {
+            new Foo(new Bar(new Baz())).Crash();
         }
     }
 }
