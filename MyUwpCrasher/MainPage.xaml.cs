@@ -51,5 +51,10 @@ namespace MyUwpCrasher
                 this.ExceptionText.Text += ex.ToString();
             }
         }
+
+        private async void AsyncExceptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Task.Run(() => throw new Exception("Async BugSplat!"));
+        }
     }
 }

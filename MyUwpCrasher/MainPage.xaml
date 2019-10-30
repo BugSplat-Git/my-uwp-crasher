@@ -10,7 +10,7 @@
 
     <Grid>
         <Image HorizontalAlignment="Center" VerticalAlignment="Top" Width="252" Height="300" Source="/Assets/bugsplat-brand.png" Margin="0,221,0,0"/>
-        <Button x:Name="UnhandledExceptionButton" Content="Unhandled Exception!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="150" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3" Foreground="White" Background="#FF2C67CD" FocusVisualSecondaryBrush="White" Margin="0,536,0,0" Click="UnhandledExceptionButton_Click">
+        <Button x:Name="UnhandledExceptionButton" Content="Unhandled Exception" HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="150" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3" Foreground="White" Background="#FF2C67CD" FocusVisualSecondaryBrush="White" Margin="0,550,0,0" Click="UnhandledExceptionButton_Click">
             <Button.Resources>
                 <ResourceDictionary>
                     <ResourceDictionary.ThemeDictionaries>
@@ -34,7 +34,7 @@
                 </ResourceDictionary>
             </Button.Resources>
         </Button>
-        <Button x:Name="HandledExceptionButton" Content="Handled Exception!" HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="150" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3" Foreground="White" Background="#FF2C67CD" FocusVisualSecondaryBrush="White" Margin="0,577,0,0" Click="HandledExceptionButton_Click">
+        <Button x:Name="HandledExceptionButton" Content="Handled Exception" HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="150" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3" Foreground="White" Background="#FF2C67CD" FocusVisualSecondaryBrush="White" Margin="0,591,0,0" Click="HandledExceptionButton_Click">
             <Button.Resources>
                 <ResourceDictionary>
                     <ResourceDictionary.ThemeDictionaries>
@@ -58,8 +58,32 @@
                 </ResourceDictionary>
             </Button.Resources>
         </Button>
-        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="500" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" FocusVisualPrimaryBrush="#FF2C67CD" CornerRadius="3,3,3,3" Margin="0,624,0,0">
+        <Border HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Width="500" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" FocusVisualPrimaryBrush="#FF2C67CD" CornerRadius="3,3,3,3" Margin="0,679,0,0">
             <TextBlock x:Name="ExceptionText" Text="" TextWrapping="Wrap"/>
         </Border>
+        <Button x:Name="AsyncExceptionButton" Content="Async Exception" VerticalAlignment="Top" Height="36" Width="150" BorderBrush="#FF2C67CD" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3" Foreground="White" Background="#FF2C67CD" FocusVisualSecondaryBrush="White" Margin="0,632,0,0" HorizontalAlignment="Center" Click="AsyncExceptionButton_Click">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#FF2C67CD"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FF0A4CBF"/>
+                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="#FF2C67CD"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPressed" Color="#FF2C67CD"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="White"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#FF2C67CD"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FF0A4CBF"/>
+                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="#FF2C67CD"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPressed" Color="#FF2C67CD"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="White"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
