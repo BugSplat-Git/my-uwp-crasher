@@ -34,17 +34,17 @@ namespace MyUwpCrasher
             ThrowExceptionWithStackFrames();
         }
 
-        private void HandledExceptionButton_Click(object sender, RoutedEventArgs e)
+        private async void HandledExceptionButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                throw new Exception("BugSplat!");
+                ThrowExceptionWithStackFrames();
             }
             catch (Exception ex)
             {
                 this.ExceptionText.Text = "Sending to BugSplat...";
 
-                Task.Run(() => App.BugSplat.Post(ex).Wait());
+                await Task.Run(() => App.BugSplat.Post(ex));
 
                 this.ExceptionText.Text = "Sent!";
                 this.ExceptionText.Text += Environment.NewLine;
