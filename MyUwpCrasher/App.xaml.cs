@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using BugSplatDotNetStandard;
+using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.ApplicationModel.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace MyUwpCrasher
@@ -22,6 +14,8 @@ namespace MyUwpCrasher
     /// </summary>
     sealed partial class App : Application
     {
+        public static readonly BugSplat BugSplat = new BugSplat("Fred", "MyUwpCrasher", "1.0.0.0");
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +24,12 @@ namespace MyUwpCrasher
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.UnhandledException += async (sender, args) =>
+            {
+                args.Handled = true;
+                await BugSplat.Post(args.Exception);
+                CoreApplication.Exit();
+            };
         }
 
         /// <summary>

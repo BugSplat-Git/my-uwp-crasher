@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -27,9 +29,27 @@ namespace MyUwpCrasher
             this.InitializeComponent();
         }
 
-        private void CrashButton_Click(object sender, RoutedEventArgs e)
+        private void UnhandledExceptionButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Crash!");
+            throw new Exception("BugSplat!");
+        }
+
+        private void HandledExceptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                throw new Exception("BugSplat!");
+            }
+            catch (Exception ex)
+            {
+                this.ExceptionText.Text = "Sending to BugSplat...";
+
+                Task.Run(() => App.BugSplat.Post(ex).Wait());
+
+                this.ExceptionText.Text = "Sent!";
+                this.ExceptionText.Text += Environment.NewLine;
+                this.ExceptionText.Text += ex.ToString();
+            }
         }
     }
 }
