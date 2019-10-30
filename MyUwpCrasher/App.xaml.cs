@@ -1,5 +1,6 @@
 ﻿using BugSplatDotNetStandard;
 using System;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Core;
@@ -27,6 +28,12 @@ namespace MyUwpCrasher
             this.UnhandledException += async (sender, args) =>
             {
                 args.Handled = true;
+                await BugSplat.Post(args.Exception);
+                CoreApplication.Exit();
+            };
+
+            TaskScheduler.UnobservedTaskException += async (sender, args) =>
+            {
                 await BugSplat.Post(args.Exception);
                 CoreApplication.Exit();
             };

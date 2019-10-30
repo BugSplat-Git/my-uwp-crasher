@@ -57,6 +57,18 @@ namespace MyUwpCrasher
             await Task.Run(() => throw new Exception("BugSplat!"));
         }
 
+        private void UnobservedTaskExceptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            Task.Factory.StartNew(() =>
+            {
+                ThrowExceptionWithStackFrames();
+            });
+
+            Thread.Sleep(100);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
         private void ThrowExceptionWithStackFrames()
         {
             new Foo(new Bar(new Baz())).Crash();
