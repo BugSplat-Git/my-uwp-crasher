@@ -54,7 +54,7 @@ namespace MyUwpCrasher
 
         private async void AsyncExceptionButton_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Run(() => throw new Exception("BugSplat!"));
+            await Task.Run(() => ThrowExceptionWithStackFrames());
         }
 
         private void UnobservedTaskExceptionButton_Click(object sender, RoutedEventArgs e)
