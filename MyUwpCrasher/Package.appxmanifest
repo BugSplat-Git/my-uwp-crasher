@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ab4441bd-566c-4d81-961c-f9e14eb9fedc"
-    Publisher="CN=bobby"
+    Name="BugSplat.bugsplat"
+    Publisher="CN=2CDED214-5532-4B87-BEF2-2F77D6ABC90F"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ab4441bd-566c-4d81-961c-f9e14eb9fedc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="5ddefb9f-8290-4e58-87c7-5d44eeca50aa" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>MyUwpCrasher</DisplayName>
-    <PublisherDisplayName>bobby@bugsplat.com</PublisherDisplayName>
+    <DisplayName>bugsplat</DisplayName>
+    <PublisherDisplayName>BugSplat</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="MyUwpCrasher.App">
       <uap:VisualElements
-        DisplayName="MyUwpCrasher"
+        DisplayName="bugsplat"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="MyUwpCrasher"
