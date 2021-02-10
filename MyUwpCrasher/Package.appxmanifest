@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="5ddefb9f-8290-4e58-87c7-5d44eeca50aa" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>bugsplat</DisplayName>
+    <DisplayName>MyUwpCrasher</DisplayName>
     <PublisherDisplayName>BugSplat</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -32,13 +32,15 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="MyUwpCrasher.App">
       <uap:VisualElements
-        DisplayName="bugsplat"
+        DisplayName="MyUwpCrasher"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="MyUwpCrasher"
+        Description="This application demonstrates BugSplat&apos;s C# .NET standard error reporting NuGet package. BugSplat is a turnkey cross-platform crash and error reporting solution. All errors generated with this sample application will be posted to BugSplat&apos;s sample database."
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png"  BackgroundColor="white"/>
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
